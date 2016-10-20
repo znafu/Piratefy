@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Piratefy</title>
+
+  <!-- Jquery core JS -->
+  <script src="./js/jquery.min.js" type="text/javascript"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Own Libraries -->
+  <script src="./js/main.js" type="text/javascript"></script>
+  <link href="./css/main.css" rel="stylesheet">
+  <!--<link href="./css/style.css" rel="stylesheet">-->
+</head>
+<body>
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-sm-3 col-md-2">
+        <ul id="playList" class="nav nav-pills nav-stack">
+          <li value="http://abarcarodriguez.com/365/files/offspring.mp3">Mother's Day</li>
+          <li value="http://abarcarodriguez.com/365/files/anamanaguchi.mp3">Blackout City</li>
+          <li value="http://abarcarodriguez.com/365/files/rainbow.mp3">The Primordial Booze</li>
+        </ul>
+      </div>
+
+      <div class="col-md-10 col-sm-9">
+        <div id="player">
+          <img src="http://abarcarodriguez.com/365/files/rainbow.jpg" class="cover" id="art" />
+          <div class="trackinfo">
+              <p id="title"></p>
+              <p id="artist"></p>
+          </div>
+          <div id="track">
+              <div id="progress"></div>
+              <div id="handler"></div>
+          </div>
+          <div class="container">
+              <div class="info">
+                  <div class="cont">
+                      <button id="prev" class="nav" onclick="prevSong">
+                          <img src="http://abarcarodriguez.com/lab/prev.png" />
+                      </button>
+                      <button id="play" class="nav" onclick="playSong()">
+                          <img class="pad" src="http://abarcarodriguez.com/lab/play.png" />
+                      </button>
+                      <button id="next" class="nav" onclick="nextSong()">
+                          <img src="http://abarcarodriguez.com/lab/next.png" />
+                      </button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="playerPad col-md-1">
+            <a href="#" title="Prev" class="prev col-md-6"></a>
+            <a href="#" title="Play" class="play col-md-6" ></a>
+            <a href="#" title="Next" class="next col-md-6"></a>
+            <button id="prev" class="nav">
+                <img src="http://abarcarodriguez.com/lab/prev.png" />
+            </button>
+            <button id="play" class="nav">
+                <img class="pad" src="http://abarcarodriguez.com/lab/play.png" />
+            </button>
+            <button id="next" class="nav">
+                <img src="http://abarcarodriguez.com/lab/next.png" />
+            </button>            
+        </div>
+    </div>-->
+</body>
+</html>

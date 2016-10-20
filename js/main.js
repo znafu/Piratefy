@@ -21,17 +21,6 @@ function initPage() {
 
   nameTrack = songs[nmbSong].textContent;
   urlTrack = songs[nmbSong].getAttribute('value');
-
-  play = document.getElementById("play");
-  play.addEventListener('click', playSong);
-
-  prev = document.getElementById("prev");
-  prev.addEventListener('click', function(){
-
-  });
-
-  next = document.getElementById("next");
-  next.addEventListener('click', nextSong);
 }
 
 var playSong = function() {
@@ -53,3 +42,21 @@ var nextSong = function () {
   audio.src = urlTrack;
   audio.play();
 };
+var prevSong = function () {
+  if(playing){
+    audio.pause();
+  }
+  nmbSong--;
+  
+  urlTrack = songs[nmbSong].getAttribute('value');
+  audio.src = urlTrack;
+  audio.play();
+}
+
+/*$(document).ready(function() {
+  var icon = $('.play');
+  icon.click(function() {
+     icon.toggleClass('active');
+     return false;
+  });
+});*/
