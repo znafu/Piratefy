@@ -4,8 +4,12 @@ var durationTrack = 0;
 var playing = false;
 var playType = ['Normal', 'Random'];
 var audio;
-var songs;
 var nmbSong;
+
+var songs = [];
+var gender = [];
+var artist = [];
+var playList = [];
 
 var play;
 var prev;
@@ -51,6 +55,15 @@ var prevSong = function () {
   urlTrack = songs[nmbSong].getAttribute('value');
   audio.src = urlTrack;
   audio.play();
+}
+var stopPlay = function () {
+  if(playing){
+    audio.pause();
+  }
+  playing = !playing;
+}
+var setVolume = function (volumeValue) {
+  audio.volume = volumeValue;
 }
 
 /*$(document).ready(function() {
