@@ -12,8 +12,8 @@ var artist = [];
 var playList = [];
 
 var play;
-var prev;
-var next;
+var pause;
+var stop;
 
 document.addEventListener('DOMContentLoaded', initPage);
 
@@ -25,6 +25,18 @@ function initPage() {
 
   nameTrack = songs[nmbSong].textContent;
   urlTrack = songs[nmbSong].getAttribute('value');
+
+  play = document.querySelector(".icon-play");
+  pause = document.querySelector(".icon-pause");
+  stop = document.querySelector(".icon-stop");
+
+  showControls();
+}
+
+var showControls = function (){
+  play.style.display = playing ? "none" : "";
+  pause.style.display = playing ? "" : "none";
+  stop.style.display = playing ? "" : "none";
 }
 
 var playSong = function() {
@@ -35,6 +47,8 @@ var playSong = function() {
     audio.play();
   }
   playing = !playing;
+
+  showControls();  
 };
 var nextSong = function () {
   if(playing){
@@ -57,19 +71,11 @@ var prevSong = function () {
   audio.play();
 }
 var stopPlay = function () {
-  if(playing){
-    audio.pause();
-  }
+  audio.pause();
+  audio = new Audio();
   playing = !playing;
+  showControls();  
 }
 var setVolume = function (volumeValue) {
-  audio.volume = volumeValue;
+  audio.volume = volumeValue;  
 }
-
-/*$(document).ready(function() {
-  var icon = $('.play');
-  icon.click(function() {
-     icon.toggleClass('active');
-     return false;
-  });
-});*/

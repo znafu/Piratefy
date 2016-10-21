@@ -10,7 +10,9 @@
   <script src="./js/jquery.min.js" type="text/javascript"></script>
   <!-- Bootstrap core CSS -->
   <link href="./css/bootstrap.min.css" rel="stylesheet">
-
+  <!-- Fontello icons -->
+  <link rel="stylesheet" href="./css/fontello.css">
+  
   <!-- Own Libraries -->
   <script src="./js/main.js" type="text/javascript"></script>
   <link href="./css/main.css" rel="stylesheet">
@@ -41,13 +43,13 @@
           <div class="container">
               <div class="info">
                   <div class="cont">
-                      <button id="prev" class="nav" onclick="prevSong()">
+                      <button class="nav" onclick="prevSong()">
                           <img src="http://abarcarodriguez.com/lab/prev.png" />
                       </button>
-                      <button id="play" class="nav" onclick="playSong()">
+                      <button class="nav" onclick="playSong()">
                           <img class="pad" src="http://abarcarodriguez.com/lab/play.png" />
                       </button>
-                      <button id="next" class="nav" onclick="nextSong()">
+                      <button class="nav" onclick="nextSong()">
                           <img src="http://abarcarodriguez.com/lab/next.png" />
                       </button>
                   </div>
@@ -57,13 +59,15 @@
       </div>
     </div>
   </div>
-  <!--<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="playerPad col-md-1">
-            <a href="#" title="Prev" class="prev col-md-6"></a>
-            <a href="#" title="Play" class="play col-md-6" ></a>
-            <a href="#" title="Next" class="next col-md-6"></a>
-            <button id="prev" class="nav">
+            <button title="Play" class="icon-play col-md-2" onclick="playSong()"></button>
+            <button title="Pause" class="icon-pause col-md-2" onclick="playSong()"></button>
+            <button title="Prev" class="icon-fast-backward col-md-2" onclick="prevSong()"></button>
+            <button title="Stop" class="icon-stop col-md-2" onclick="stopPlay()"></button>
+            <button title="Next" class="icon-fast-forward col-md-2" onclick="nextSong()"></button>
+            <!--<button id="prev" class="nav">
                 <img src="http://abarcarodriguez.com/lab/prev.png" />
             </button>
             <button id="play" class="nav">
@@ -71,8 +75,9 @@
             </button>
             <button id="next" class="nav">
                 <img src="http://abarcarodriguez.com/lab/next.png" />
-            </button>            
+            </button>-->
         </div>
-    </div>-->
+    </div>
+  </nav>
 </body>
 </html>

@@ -1,0 +1,15 @@
+.playerPad{
+  color: white;
+  font-size: 40px;
+  margin: auto auto auto -10px;
+  }
+.playerPad>button{
+  background: none;
+  border: 1px solid transparent;
+  vertical-align: middle;
+}
+.playerPad>button:hover{
+  color: gray;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
