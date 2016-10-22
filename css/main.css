@@ -1,4 +1,5 @@
 .playerPad{
+  text-align: center;
   color: white;
   font-size: 40px;
   margin: auto auto auto -10px;
@@ -7,9 +8,14 @@
   background: none;
   border: 1px solid transparent;
   vertical-align: middle;
+  outline: none;
 }
 .playerPad>button:hover{
   color: gray;
   border-radius: 50%;
   border: 1px solid gray;
 }
+
+#random, #loop, #volumen, #volumenMax, #volumenMin :hover{
+  border: 1px solid transparent;
+} 
