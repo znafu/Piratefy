@@ -73,6 +73,33 @@
 					<li value="http://abarcarodriguez.com/365/files/rainbow.mp3">The Primordial Booze</li>
 				</ul>
 			</div>
+
+			<div class ="matriz" id="imagen">
+				<table>
+					<tr>
+						<td>
+						<article class="discos" type = "image"  data-song="Songs/1.mp3" onclick="reproduccion" > <img src="images/1.jpg" ></article>
+						</td>
+						<td>
+						<article class="discos" type = "image"  data-song="Songs/2.mp3" onclick="reproduccion" > <img src="images/2.jpg" ></article>
+						</td>
+						<td>
+						<article class="discos" type = "image"  data-song="Songs/3.mp3" onclick="reproduccion" > <img src="images/3.jpg" ></article>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<article class="discos" type = "image"  data-song="Songs/4.mp3" onclick="reproduccion" > <img src="images/4.jpg" ></article>
+						</td>
+						<td>
+						<article class="discos" type = "image"  data-song="Songs/5.mp3" onclick="reproduccion" > <img src="images/5.jpg" ></article>
+						</td>
+						<td>
+						<article class="discos" type = "image"  data-song="Songs/6.mp3" onclick="reproduccion" > <img src="images/6.jpg" ></article>
+						</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 	<nav class="navbar navbar-inverse navbar-fixed-bottom">
@@ -87,8 +114,8 @@
 			</div>
 			<div class="row">
 				<div class="playerPad">
-					<button id="random" title="random" class="icon-shuffle navbar-left" onclick=""></button>
-					<button id="loop" title="loop" class="icon-loop navbar-left" onclick=""></button>
+					<button id="random" title="Aleatorio" class="icon-shuffle navbar-left" onclick=""></button>
+					<button id="loop" title="Repetición" class="icon-loop navbar-left" onclick=""></button>
 
 					<button title="Prev" class="icon-fast-backward" onclick="prevSong()"></button>
 					<button title="Play" class="icon-play" onclick="playSong()"></button>
@@ -96,7 +123,8 @@
 					<!--<button title="Stop" class="icon-stop" onclick="stopPlay()"></button>-->
 					<button title="Next" class="icon-fast-forward" onclick="nextSong()"></button>
 
-					<button id="volume" title="loop" class="icon-sound navbar-right" onclick=""></button>
+					<button id="volumeB" title="Volume" class="icon-sound navbar-right" onclick="mute()"></button>
+					<button id="muted" title="Mute" class="icon-mute navbar-right" onclick="mute()"></button>					
 					<div class="volume navbar-right" title="Volumen">
 						<span class="volumeBar"></span>
 					</div>

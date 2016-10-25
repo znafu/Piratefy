@@ -1,26 +1,27 @@
-var nameTrack = "";
-var urlTrack = "";
+var nameTrack, urlTrack, nmbSong;
 var durationTrack = 0;
 var playing = false;
 var playType = ['Normal', 'Random'];
 var audio;
-var nmbSong;
 
 var songs = [];
 var gender = [];
 var artist = [];
 var playList = [];
 
+var nameSong;
 var play;
 var pause;
 var stop;
+var muted;
+var volumeB;
 
-document.addEventListener('DOMContentLoaded', initPage);
+document.addEventListener('DOMContentLoaded', initPage) ;
 
 function initPage() {
   audio = new Audio();
   songs = document.querySelectorAll("#playList li");
-  song = Array.from(songs);
+  songs = Array.from(songs);
   nmbSong = 0;
 
   nameTrack = songs[nmbSong].textContent;
@@ -29,7 +30,12 @@ function initPage() {
   play = document.querySelector(".icon-play");
   pause = document.querySelector(".icon-pause");
   stop = document.querySelector(".icon-stop");
+  muted = document.querySelector("#muted");
+  volumeB = document.querySelector("#volumeB");
+  nameSong = document.querySelector(".audio-player>h2");
 
+  nameSong.textContent = "";
+  muted.style.display= "none";
   showControls();
 }
 
@@ -38,7 +44,6 @@ var showControls = function (){
   pause.style.display = playing ? "" : "none";
   stop.style.display = playing ? "" : "none";
 }
-
 var playSong = function() {
   audio.src = urlTrack;
   if(playing){
@@ -48,6 +53,7 @@ var playSong = function() {
   }
   playing = !playing;
 
+  nameSong.textContent = songs[nmbSong].textContent;
   showControls();  
 };
 var nextSong = function () {
@@ -56,6 +62,7 @@ var nextSong = function () {
   }
   nmbSong++;
 
+  nameSong.textContent = songs[nmbSong].textContent;
   urlTrack = songs[nmbSong].getAttribute('value');
   audio.src = urlTrack;
   audio.play();
@@ -66,6 +73,7 @@ var prevSong = function () {
   }
   nmbSong--;
   
+  nameSong.textContent = songs[nmbSong].textContent;
   urlTrack = songs[nmbSong].getAttribute('value');
   audio.src = urlTrack;
   audio.play();
@@ -76,14 +84,21 @@ var stopPlay = function () {
   playing = !playing;
   showControls();  
 }
+var mute = function() {
+    audio.muted = !audio.muted;
+    if (audio.muted === true){
+        muted.style.display = "";
+        volumeB.style.display = "none";
+    }else{
+        muted.style.display = "none";
+        volumeB.style.display = "";
+    }
+}
+
+/*
 var setVolume = function (volumeValue) {
   audio.volume = volumeValue;  
 }
-
-$('.muted').click(function () {
-    audio.muted = !audio.muted;
-    return false;
-});
 
 //VOLUME BAR
 //volume bar event
@@ -137,4 +152,4 @@ var updateVolume = function (x, vol) {
         $('.sound').removeClass('muted').removeClass('sound2');
     }
 
-};
+};*/

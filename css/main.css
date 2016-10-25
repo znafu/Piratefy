@@ -24,7 +24,7 @@ body {
     border: 1px solid gray;
 }
 
-#random, #loop, #volume :hover {
+#random, #loop, #volumeB, #muted :hover {
     border: 1px solid transparent;
 }
 
